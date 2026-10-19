@@ -3,11 +3,6 @@
 A test repository for smoke-testing **Rider Project Systems** (Solution view, Repo view, toolset, NuGet, run/test)
 on **.NET 11 / C# 15**, with .NET 10, .NET Framework 4.8, F#, Blazor, Aspire and a standalone frontend mixed in.
 
-* Test plan: [Project Systems Test Plan (RIDER-A-1465)](https://youtrack.jetbrains.com/articles/RIDER-A-1465)
-* Checklist: [Project Systems Smoke Testing Suite (RIDER-A-1660)](https://youtrack.jetbrains.com/articles/RIDER-A-1660)
-* Repo view: [RIDER-141157](https://youtrack.jetbrains.com/issue/RIDER-141157), [Repository view article (RIDER-A-2067)](https://youtrack.jetbrains.com/articles/RIDER-A-2067)
-* .NET 11 changes: [Overview](https://learn.microsoft.com/en-us/dotnet/core/whats-new/dotnet-11/overview), [SDK](https://learn.microsoft.com/en-us/dotnet/core/whats-new/dotnet-11/sdk), [C# 15](https://learn.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-15)
-* Older solution for reference: [ProjectModelSmoke](https://jetbrains.team/p/dotnettestprojects/repositories/ProjectModelSmoke/files/master/README.md)
 
 ## Requirements
 
