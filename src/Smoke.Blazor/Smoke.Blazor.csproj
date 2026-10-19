@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net11.0</TargetFramework>
+    <BlazorDisableThrowNavigationException>true</BlazorDisableThrowNavigationException>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Smoke.Library\Smoke.Library.csproj" />
+    <ProjectReference Include="..\Smoke.Rcl\Smoke.Rcl.csproj" />
+  </ItemGroup>
+
+</Project>

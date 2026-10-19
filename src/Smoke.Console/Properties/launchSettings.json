@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json.schemastore.org/launchsettings.json",
+  "profiles": {
+    "Smoke.Console": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "SMOKE_PROFILE": "default"
+      }
+    },
+    "MSBuildArgs": {
+      "commandName": "Project",
+      "commandLineArgs": "--name $(AssemblyName) --tfm $(TargetFramework)",
+      "environmentVariables": {
+        "SMOKE_PROFILE": "msbuild-args"
+      }
+    }
+  }
+}

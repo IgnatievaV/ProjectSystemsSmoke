@@ -1,0 +1,1 @@
+This file is not part of any project - it should be shown in the non-solution (yellow) scope.

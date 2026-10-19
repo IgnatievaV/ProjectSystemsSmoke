@@ -1,0 +1,78 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!-- Project model playground: file actions, include/exclude, nesting, links, wildcards, custom imports. -->
+  <PropertyGroup>
+    <TargetFramework>net11.0</TargetFramework>
+  </PropertyGroup>
+
+  <!-- Explicit import: check "Show Project Imports" and navigation to the imported file. -->
+  <Import Project="Imports\ProjectModel.props" />
+
+  <!-- Exclude: one file and one folder (must be shown as excluded / hidden unless "Show All Files"). -->
+  <ItemGroup>
+    <Compile Remove="Excluded\ExcludedFile.cs" />
+    <Compile Remove="Excluded\ExcludedFolder\**" />
+    <None Remove="Excluded\ExcludedFolder\**" />
+  </ItemGroup>
+
+  <!-- Nested files (DependentUpon). -->
+  <ItemGroup>
+    <Compile Update="Nested\Report.Designer.cs" DependentUpon="Report.cs" />
+    <None Update="Nested\settings.Development.json" DependentUpon="settings.json" />
+  </ItemGroup>
+
+  <!-- Linked file and linked folder from outside the project directory. -->
+  <ItemGroup>
+    <Compile Include="..\..\shared\SharedCode.cs" Link="Linked\SharedCode.cs" />
+    <None Include="..\..\shared\assets\**" LinkBase="Linked\Assets" />
+  </ItemGroup>
+
+  <!-- Wildcards: *.txt included as None recursively, *.skip.cs removed from compilation. -->
+  <ItemGroup>
+    <None Include="Wildcards\**\*.txt" />
+    <Compile Remove="Wildcards\**\*.skip.cs" />
+    <None Include="Wildcards\**\*.skip.cs" />
+  </ItemGroup>
+
+  <!-- Content copied to output (check bin\ after build, and Clean). -->
+  <ItemGroup>
+    <None Update="Content\data.json" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+
+  <!-- Custom item type defined in Imports\ProjectModel.props. -->
+  <ItemGroup>
+    <SmokeItem Include="Content\custom.smoke" />
+  </ItemGroup>
+
+  <!-- .resx with designer file (ResXFileCodeGenerator) and a satellite culture. -->
+  <ItemGroup>
+    <EmbeddedResource Update="Resources\Strings.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Strings.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <Compile Update="Resources\Strings.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Strings.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <!-- T4 template with generated output nested under it. -->
+  <ItemGroup>
+    <None Update="Templates\Hello.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Hello.cs</LastGenOutput>
+    </None>
+    <Compile Update="Templates\Hello.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Hello.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <!-- Case-sensitivity: the file on disk is data.json, the item says DATA.JSON. Works on Windows/macOS, mismatches on Linux. -->
+  <ItemGroup>
+    <Content Include="CaseSensitivity\DATA.JSON" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+
+</Project>

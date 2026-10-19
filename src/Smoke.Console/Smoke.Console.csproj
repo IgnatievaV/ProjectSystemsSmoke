@@ -1,0 +1,33 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net11.0</TargetFramework>
+    <RuntimeIdentifiers>win-x64;linux-x64;osx-arm64</RuntimeIdentifiers>
+    <!-- Source generator output is written to obj/.../generated for inspection. -->
+    <EmitCompilerGeneratedFiles>true</EmitCompilerGeneratedFiles>
+  </PropertyGroup>
+
+  <!-- OS-specific MSBuild: one Platform\*.cs file is compiled per OS. Check which one is active on each OS. -->
+  <PropertyGroup Condition="$([MSBuild]::IsOSPlatform('Windows'))">
+    <DefineConstants>$(DefineConstants);SMOKE_WINDOWS</DefineConstants>
+  </PropertyGroup>
+  <ItemGroup Condition="!$([MSBuild]::IsOSPlatform('Windows'))">
+    <Compile Remove="Platform\PlatformInfo.Windows.cs" />
+    <None Include="Platform\PlatformInfo.Windows.cs" />
+  </ItemGroup>
+  <ItemGroup Condition="$([MSBuild]::IsOSPlatform('Windows'))">
+    <Compile Remove="Platform\PlatformInfo.Unix.cs" />
+    <None Include="Platform\PlatformInfo.Unix.cs" />
+  </ItemGroup>
+
+  <!-- Shared project (.shproj). -->
+  <Import Project="..\Smoke.Shared\Smoke.Shared.projitems" Label="Shared" />
+
+  <ItemGroup>
+    <ProjectReference Include="..\Smoke.Library\Smoke.Library.csproj" />
+    <!-- Source generator: analyzer reference, no runtime dependency. -->
+    <ProjectReference Include="..\Smoke.Generators\Smoke.Generators.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
+  </ItemGroup>
+
+</Project>

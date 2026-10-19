@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk.Razor">
+
+  <!-- Razor Class Library with TypeScript. .NET 11: TypeScript outputs now flow into Static Web Assets. -->
+  <PropertyGroup>
+    <TargetFramework>net11.0</TargetFramework>
+    <!-- TypeScript compilation needs Node.js. Enable with: dotnet build -p:SmokeEnableTypeScript=true -->
+    <TypeScriptCompileBlocked Condition="'$(SmokeEnableTypeScript)' != 'true'">true</TypeScriptCompileBlocked>
+    <TypeScriptTarget>ES2022</TypeScriptTarget>
+    <TypeScriptOutDir>wwwroot\js</TypeScriptOutDir>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <SupportedPlatform Include="browser" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Components.Web" />
+    <PackageReference Include="Microsoft.TypeScript.MSBuild">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!-- Intentionally broken: the import below does not exist, so the project fails to load/evaluate.
+       Excluded from the solution build (Build="false" in ProjectSystemsSmoke.slnx).
+       Check: error on load, Unload/Reload, Edit project file, fix and reload. -->
+  <Import Project="DoesNotExist.props" />
+
+  <PropertyGroup>
+    <TargetFramework>net11.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Smoke.Missing\Smoke.Missing.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,62 @@
+<Solution>
+  <Configurations>
+    <BuildType Name="Debug" />
+    <BuildType Name="Release" />
+    <BuildType Name="Smoke" />
+    <Platform Name="Any CPU" />
+    <Platform Name="x64" />
+  </Configurations>
+  <Folder Name="/Solution Items/">
+    <File Path=".editorconfig" />
+    <File Path=".gitattributes" />
+    <File Path="Directory.Build.props" />
+    <File Path="Directory.Build.targets" />
+    <File Path="Directory.Packages.props" />
+    <File Path="dirs.proj" />
+    <File Path="global.json" />
+    <File Path="nuget.config" />
+    <File Path="README.md" />
+  </Folder>
+  <Folder Name="/file-based/">
+    <File Path="file-based/app.cs" />
+    <File Path="file-based/directives-rc2.cs" />
+    <File Path="file-based/helpers.cs" />
+    <File Path="file-based/models/customer.cs" />
+  </Folder>
+  <Folder Name="/src/">
+    <Project Path="src/Smoke.Console/Smoke.Console.csproj" />
+    <Project Path="src/Smoke.CSharpPreview/Smoke.CSharpPreview.csproj" />
+    <Project Path="src/Smoke.FSharp/Smoke.FSharp.fsproj" />
+    <Project Path="src/Smoke.Generators/Smoke.Generators.csproj" />
+    <Project Path="src/Smoke.Library/Smoke.Library.csproj" />
+    <Project Path="src/Smoke.Shared/Smoke.Shared.shproj" />
+  </Folder>
+  <Folder Name="/src/Web/">
+    <Project Path="src/Smoke.AppHost/Smoke.AppHost.csproj" />
+    <Project Path="src/Smoke.Blazor/Smoke.Blazor.csproj" />
+    <Project Path="src/Smoke.Esproj/Smoke.Esproj.esproj" />
+    <Project Path="src/Smoke.Rcl/Smoke.Rcl.csproj" />
+    <Project Path="src/Smoke.Web/Smoke.Web.csproj" />
+  </Folder>
+  <Folder Name="/src/Desktop/">
+    <Project Path="src/Smoke.WinForms/Smoke.WinForms.csproj" />
+    <Project Path="src/Smoke.Wpf/Smoke.Wpf.csproj" />
+  </Folder>
+  <Folder Name="/src/NetFramework/">
+    <Project Path="src/Smoke.NetFx.Sdk/Smoke.NetFx.Sdk.csproj" />
+    <Project Path="legacy/Smoke.NetFx.Legacy/Smoke.NetFx.Legacy.csproj">
+      <!-- Old-style project: not part of the solution build so dotnet build works on Linux/macOS. Build it from legacy/Legacy.sln. -->
+      <Build Solution="*|*" Project="false" />
+    </Project>
+  </Folder>
+  <Folder Name="/src/ProjectModel/">
+    <Project Path="src/Smoke.ProjectModel/Smoke.ProjectModel.csproj" />
+    <Project Path="src/Smoke.Broken/Smoke.Broken.csproj">
+      <!-- Intentionally broken project: excluded from the solution build. -->
+      <Build Solution="*|*" Project="false" />
+    </Project>
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/Smoke.Tests/Smoke.Tests.csproj" />
+  </Folder>
+</Solution>

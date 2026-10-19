@@ -1,0 +1,12 @@
+{
+  "solution": {
+    "path": "ProjectSystemsSmoke.slnx",
+    "projects": [
+      "src\\Smoke.Console\\Smoke.Console.csproj",
+      "src\\Smoke.Generators\\Smoke.Generators.csproj",
+      "src\\Smoke.Library\\Smoke.Library.csproj",
+      "src\\Smoke.Shared\\Smoke.Shared.shproj",
+      "tests\\Smoke.Tests\\Smoke.Tests.csproj"
+    ]
+  }
+}

@@ -1,0 +1,6 @@
+<Project>
+  <!-- Custom target imported into every project. Check it in "Show Project Imports" and in the build output. -->
+  <Target Name="SmokePrintInfo" AfterTargets="Build" Condition="'$(TargetFramework)' != ''">
+    <Message Importance="high" Text="[ProjectSystemsSmoke] $(MSBuildProjectName) -> $(TargetFramework) built with SDK $(NETCoreSdkVersion)" />
+  </Target>
+</Project>

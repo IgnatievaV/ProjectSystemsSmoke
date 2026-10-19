@@ -1,0 +1,16 @@
+@Smoke.Web_HostAddress = http://localhost:5131
+
+GET {{Smoke.Web_HostAddress}}/openapi/v1.json
+Accept: application/json
+
+###
+
+GET {{Smoke.Web_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
+
+GET {{Smoke.Web_HostAddress}}/hello/Rider
+Accept: text/plain
+
+###

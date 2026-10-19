@@ -1,0 +1,10 @@
+<Project>
+  <PropertyGroup>
+    <SmokeImportedProperty>Imported from Imports\ProjectModel.props</SmokeImportedProperty>
+  </PropertyGroup>
+
+  <!-- Makes the custom item type visible in Solution Explorer / file properties "Build action". -->
+  <ItemGroup>
+    <AvailableItemName Include="SmokeItem" />
+  </ItemGroup>
+</Project>

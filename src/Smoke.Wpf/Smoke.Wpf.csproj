@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!-- OS-specific TFM. Builds everywhere thanks to EnableWindowsTargeting (Directory.Build.props), runs on Windows only. -->
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net11.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Smoke.Library\Smoke.Library.csproj" />
+  </ItemGroup>
+
+</Project>

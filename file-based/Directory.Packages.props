@@ -1,0 +1,6 @@
+<Project>
+  <!-- File-based apps declare package versions in #:package directives, so CPM is disabled here. -->
+  <PropertyGroup>
+    <ManagePackageVersionsCentrally>false</ManagePackageVersionsCentrally>
+  </PropertyGroup>
+</Project>

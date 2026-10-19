@@ -1,0 +1,11 @@
+<#@ template language="C#" #>
+<#@ output extension=".cs" #>
+// T4 template output. Hello.cs is nested under Hello.tt (LastGenOutput).
+namespace Smoke.ProjectModel.Templates;
+
+public static class Hello
+{
+<# foreach (var name in new[] { "Rider", "T4" }) { #>
+    public const string <#= name #> = "Hello, <#= name #>!";
+<# } #>
+}

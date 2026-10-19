@@ -1,0 +1,11 @@
+<Project>
+  <!-- Shared settings for every project in the solution (Project Systems: implicit imports). -->
+  <PropertyGroup>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <Company>JetBrains Rider QA</Company>
+    <Product>ProjectSystemsSmoke</Product>
+    <!-- Allows building the WPF project on Linux/macOS. -->
+    <EnableWindowsTargeting>true</EnableWindowsTargeting>
+  </PropertyGroup>
+</Project>

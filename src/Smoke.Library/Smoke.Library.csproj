@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!-- Multi-targeting: C# 15 code is compiled only for net11.0 (see #if NET11_0_OR_GREATER).
+       net48 makes Rider pick the Visual Studio MSBuild on Windows. Switch the TFM in the editor context selector and check highlighting/navigation per target. -->
+  <PropertyGroup>
+    <TargetFrameworks>net11.0;net10.0;netstandard2.1;net48</TargetFrameworks>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(TargetFramework)' == 'netstandard2.1' Or '$(TargetFramework)' == 'net48'">
+    <ImplicitUsings>disable</ImplicitUsings>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(TargetFramework)' == 'net48'">
+    <Nullable>disable</Nullable>
+  </PropertyGroup>
+
+</Project>

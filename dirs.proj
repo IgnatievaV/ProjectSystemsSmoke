@@ -1,0 +1,8 @@
+<!-- Traversal project: `dotnet build dirs.proj` / `dotnet test dirs.proj` (traversal support in dotnet test is new in .NET 11). -->
+<Project Sdk="Microsoft.Build.Traversal">
+  <ItemGroup>
+    <ProjectReference Include="src\**\*.csproj" />
+    <ProjectReference Include="src\**\*.fsproj" />
+    <ProjectReference Include="tests\**\*.csproj" />
+  </ItemGroup>
+</Project>
