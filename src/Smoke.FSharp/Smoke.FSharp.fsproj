@@ -9,6 +9,19 @@
   <ItemGroup>
     <Compile Include="Shapes.fs" />
     <Compile Include="Library.fs" />
+    <Compile Include="FileToSearch.fs" />
+  </ItemGroup>
+
+  <!-- Non-code files must be listed explicitly in F# projects (no default globs). -->
+  <ItemGroup>
+    <None Include="Actions\Copy\CopyMe.css" />
+    <None Include="Actions\Copy\CopyMe.html" />
+    <None Include="Actions\Copy\CopyMe.js" />
+    <None Include="Actions\Copy\CopyMe.min.js" />
+    <None Include="Actions\Rename\RenameMe.css" />
+    <None Include="Actions\Rename\RenameMe.html" />
+    <None Include="Actions\Rename\RenameMe.js" />
+    <None Include="Actions\Rename\RenameMe.min.js" />
   </ItemGroup>
 
   <ItemGroup>

@@ -3,3 +3,4 @@ $ErrorActionPreference = "Stop"
 $root = Resolve-Path (Join-Path $PSScriptRoot "..")
 Push-Location (Join-Path $root "frontend/vite-react"); npm install; Pop-Location
 Push-Location (Join-Path $root "src/Smoke.Esproj"); npm install; Pop-Location
+Push-Location (Join-Path $root "src/Smoke.Web/ClientApp"); npm install; Pop-Location

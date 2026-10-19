@@ -1,0 +1,1 @@
+Deeply nested non-code file (mydir/nested/file.txt): Locate in Solution View, Copy Path, Select In.

@@ -5,6 +5,8 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Smoke.NetFx.Legacy", "Smoke.NetFx.Legacy\Smoke.NetFx.Legacy.csproj", "{1E2F3A4B-5C6D-4E7F-8A9B-0C1D2E3F4A5B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Smoke.Wpf.Legacy", "Smoke.Wpf.Legacy\Smoke.Wpf.Legacy.csproj", "{2550A437-7331-476B-BB13-E021D7E009AB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{1E2F3A4B-5C6D-4E7F-8A9B-0C1D2E3F4A5B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1E2F3A4B-5C6D-4E7F-8A9B-0C1D2E3F4A5B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1E2F3A4B-5C6D-4E7F-8A9B-0C1D2E3F4A5B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2550A437-7331-476B-BB13-E021D7E009AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2550A437-7331-476B-BB13-E021D7E009AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2550A437-7331-476B-BB13-E021D7E009AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2550A437-7331-476B-BB13-E021D7E009AB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

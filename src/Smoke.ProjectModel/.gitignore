@@ -1,0 +1,3 @@
+# Project-level .gitignore (.ignore plugin, VCS scope colors)
+*.local.json
+local/

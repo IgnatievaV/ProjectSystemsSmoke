@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="UserContentModel">
+    <attachedFolders>
+      <Path>docs</Path>
+    </attachedFolders>
+    <explicitIncludes>
+      <Path>src/Smoke.StopIndex/ExcludedFromSolutionButInIndex</Path>
+    </explicitIncludes>
+    <explicitExcludes>
+      <Path>src/Smoke.StopIndex/FolderOutOfIndex</Path>
+      <Path>src/Smoke.StopIndex/GeneratorOutput</Path>
+      <Path>src/Smoke.Navigation/FolderOutOfIndex</Path>
+      <Path>tests/Smoke.Tests/FilesToSearch</Path>
+    </explicitExcludes>
+  </component>
+</project>

@@ -2,6 +2,10 @@
 
   <PropertyGroup>
     <TargetFramework>net11.0</TargetFramework>
+    <!-- SPA folder inside the web project (Angular). node_modules is excluded from all globs. -->
+    <SpaRoot>ClientApp\</SpaRoot>
+    <DefaultItemExcludes>$(DefaultItemExcludes);$(SpaRoot)node_modules\**;$(SpaRoot)dist\**;$(SpaRoot).angular\**</DefaultItemExcludes>
+    <TypeScriptCompileBlocked>true</TypeScriptCompileBlocked>
   </PropertyGroup>
 
   <ItemGroup>
@@ -11,6 +15,26 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Smoke.Library\Smoke.Library.csproj" />
+  </ItemGroup>
+
+  <!-- Show the SPA sources in the project, but do not treat them as Content. -->
+  <ItemGroup>
+    <Content Remove="$(SpaRoot)**" />
+    <None Remove="$(SpaRoot)**" />
+    <None Include="$(SpaRoot)**" Exclude="$(SpaRoot)node_modules\**;$(SpaRoot)dist\**;$(SpaRoot).angular\**" />
+    <Content Include="$(SpaRoot)src\Rename\RenameMePlease.cshtml" CopyToPublishDirectory="PreserveNewest" ExcludeFromSingleFile="true" />
+  </ItemGroup>
+
+  <!-- Razor component CSS nested under its .razor (old project: RenameMePlease.css DependentUpon RenameMePlease.razor). -->
+  <ItemGroup>
+    <None Update="Actions\Copy\CopyMePlease.css" DependentUpon="CopyMePlease.razor" />
+    <None Update="Actions\Rename\RenameMePlease.css" DependentUpon="RenameMePlease.razor" />
+  </ItemGroup>
+
+  <!-- cshtml as AdditionalFiles (analyzer input) in addition to being Content. -->
+  <ItemGroup>
+    <AdditionalFiles Include="Actions\Copy\CopyMePlease.cshtml" />
+    <AdditionalFiles Include="Actions\Rename\RenameMePlease.cshtml" />
   </ItemGroup>
 
 </Project>

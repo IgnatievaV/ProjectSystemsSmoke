@@ -1,0 +1,3 @@
+<component name="DependencyValidationManager">
+  <scope name="Blazor Scope" pattern="file[rider.module]:src/Smoke.Blazor//*||file[rider.module]:src/Smoke.Rcl//*" />
+</component>

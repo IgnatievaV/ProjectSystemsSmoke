@@ -1,0 +1,33 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!-- Stop Index fixture (see README "Stop index"). Index state lives in .idea/.idea.ProjectSystemsSmoke/.idea/indexLayout.xml:
+         ExcludedFolder                  - out of the solution, NOT indexed
+         ExcludedFromSolutionButInIndex  - out of the solution, but indexed (explicitIncludes)
+         FolderInIndex                   - in the solution, indexed
+         FolderOutOfIndex                - in the solution, NOT indexed (explicitExcludes)
+         GeneratorOutput                 - empty <Folder> item, NOT indexed (files generated into it must not be indexed) -->
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net11.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="ExcludedFolder\**" />
+    <None Remove="ExcludedFolder\**" />
+    <EmbeddedResource Remove="ExcludedFolder\**" />
+    <Compile Remove="ExcludedFromSolutionButInIndex\**" />
+    <None Remove="ExcludedFromSolutionButInIndex\**" />
+    <EmbeddedResource Remove="ExcludedFromSolutionButInIndex\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="FolderOutOfIndex\Some.razor" ExcludeFromSingleFile="true" />
+    <None Update="FolderOutOfIndex\Some.razor.css" DependentUpon="Some.razor" />
+    <None Update="FolderOutOfIndex\Some.razor.scss" DependentUpon="Some.razor" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="GeneratorOutput\" />
+  </ItemGroup>
+
+</Project>

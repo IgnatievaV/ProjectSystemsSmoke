@@ -13,10 +13,17 @@
     <File Path="Directory.Build.targets" />
     <File Path="Directory.Packages.props" />
     <File Path="dirs.proj" />
+    <File Path="file.txt" />
     <File Path="global.json" />
     <File Path="nuget.config" />
+    <File Path="package-lock.json" />
+    <File Path="ProjectSystemsSmoke.slnx.DotSettings" />
     <File Path="README.md" />
   </Folder>
+  <Folder Name="/Solution Items/images/">
+    <File Path="docs/images/find-in-files.png" />
+  </Folder>
+  <Folder Name="/Empty/" />
   <Folder Name="/file-based/">
     <File Path="file-based/app.cs" />
     <File Path="file-based/directives-rc2.cs" />
@@ -30,6 +37,7 @@
     <Project Path="src/Smoke.Generators/Smoke.Generators.csproj" />
     <Project Path="src/Smoke.Library/Smoke.Library.csproj" />
     <Project Path="src/Smoke.Shared/Smoke.Shared.shproj" />
+    <Project Path="src/Smoke.VisualBasic/Smoke.VisualBasic.vbproj" />
   </Folder>
   <Folder Name="/src/Web/">
     <Project Path="src/Smoke.AppHost/Smoke.AppHost.csproj" />
@@ -45,16 +53,23 @@
   <Folder Name="/src/NetFramework/">
     <Project Path="src/Smoke.NetFx.Sdk/Smoke.NetFx.Sdk.csproj" />
     <Project Path="legacy/Smoke.NetFx.Legacy/Smoke.NetFx.Legacy.csproj">
-      <!-- Old-style project: not part of the solution build so dotnet build works on Linux/macOS. Build it from legacy/Legacy.sln. -->
+      <!-- Old-style projects: not part of the solution build so dotnet build works on Linux/macOS. Build them from legacy/Legacy.sln. -->
+      <Build Solution="*|*" Project="false" />
+    </Project>
+    <Project Path="legacy/Smoke.Wpf.Legacy/Smoke.Wpf.Legacy.csproj">
       <Build Solution="*|*" Project="false" />
     </Project>
   </Folder>
   <Folder Name="/src/ProjectModel/">
     <Project Path="src/Smoke.ProjectModel/Smoke.ProjectModel.csproj" />
+    <Project Path="src/Smoke.StopIndex/Smoke.StopIndex.csproj" />
     <Project Path="src/Smoke.Broken/Smoke.Broken.csproj">
       <!-- Intentionally broken project: excluded from the solution build. -->
       <Build Solution="*|*" Project="false" />
     </Project>
+  </Folder>
+  <Folder Name="/src/Navigation/">
+    <Project Path="src/Smoke.Navigation/Smoke.Navigation.csproj" />
   </Folder>
   <Folder Name="/tests/">
     <Project Path="tests/Smoke.Tests/Smoke.Tests.csproj" />

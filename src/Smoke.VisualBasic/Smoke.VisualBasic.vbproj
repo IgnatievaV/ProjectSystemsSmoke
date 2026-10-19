@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!-- Visual Basic project with the same Actions layout as the C# and F# ones. -->
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>Smoke.VisualBasic</RootNamespace>
+    <TargetFramework>net11.0</TargetFramework>
+    <Nullable></Nullable>
+    <ImplicitUsings></ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Smoke.Library\Smoke.Library.csproj" />
+  </ItemGroup>
+
+</Project>

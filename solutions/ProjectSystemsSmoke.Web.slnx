@@ -1,0 +1,11 @@
+<!-- Solution stored in a subfolder: every project path points OUTSIDE the solution directory (../src/...).
+     Check relative paths in Solution Explorer, Add existing project, Copy Path "from content root". -->
+<Solution>
+  <Folder Name="/Solution Items/">
+    <File Path="../Dockerfile" />
+  </Folder>
+  <Project Path="../src/Smoke.Blazor/Smoke.Blazor.csproj" />
+  <Project Path="../src/Smoke.Library/Smoke.Library.csproj" />
+  <Project Path="../src/Smoke.Rcl/Smoke.Rcl.csproj" />
+  <Project Path="../src/Smoke.Web/Smoke.Web.csproj" />
+</Solution>

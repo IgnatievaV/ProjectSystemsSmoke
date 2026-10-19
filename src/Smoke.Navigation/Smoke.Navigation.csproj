@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!-- Search Everywhere / Find in Files fixture:
+         FilesToSearch     - one file per type with the same base name
+         TestFileMaskWork  - CSharpClass2.cs and JSscript2js.js are removed from the project (found only with "Include non-solution items")
+         _csharp           - folder starting with an underscore, lower-case file name
+         FolderOutOfIndex  - in the solution, not indexed (indexLayout.xml) -->
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net11.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="TestFileMaskWork\CSharpClass2.cs" />
+    <None Remove="TestFileMaskWork\JSscript2js.js" />
+  </ItemGroup>
+
+</Project>
