@@ -7,5 +7,8 @@
     <Product>ProjectSystemsSmoke</Product>
     <!-- Allows building the WPF project on Linux/macOS. -->
     <EnableWindowsTargeting>true</EnableWindowsTargeting>
+    <!-- Declare the configurations/platforms used by the solution so the Solution Properties mappings are valid. -->
+    <Configurations>Debug;Release;Smoke</Configurations>
+    <Platforms>AnyCPU;x64</Platforms>
   </PropertyGroup>
 </Project>
